@@ -7,6 +7,9 @@
     <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
     <title>Intro CSS</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:wght@300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/main.css">
 
     <!-- <style> /* Es MALA PRACTICA  */
@@ -17,20 +20,22 @@
     </style> -->
 </head>
 <body>
-
     <!-- 
     Jose: Crear un Navbar sencillo que tenga un espacio para un logo "LOGO" una lista desordenada con items de navegación
         Un Botón de Iniciar Sesión
       -->
-    <nav>
-        <img src="./assets/img/favicon.svg" alt="Logo" width="40">
-        <ul>
-            <li><a href="#">Animales</a></li>
-            <li><a href="#">formulario</a></li>
-            <li><a href="#">Articulos</a></li>
-            <li><a href="#">Footer</a></li>
+    <nav class="d-flex flex-between-center">
+        <img class="navbar-logo transition3seg" src="./assets/img/favicon.svg" alt="Logo" width="40">
+        <ul class="navbar-items d-flex flex-center">
+            <li class="navbar-item transition3seg"><a href="#animales">Animales</a></li>
+            <li class="navbar-item transition3seg"><a href="#contacto">Contacto</a></li>
+            <li class="navbar-item transition3seg"><a href="#articulos">Articulos</a></li>
+            <li class="navbar-item transition3seg"><a href="#footer">Footer</a></li>
         </ul>
-        <button>Iniciar Sesión</button>
+        <div>
+            <button class="transition3seg login-btn">Iniciar Sesión</button>
+            <button class="transition3seg register-btn">Registrate</button>
+        </div>
     </nav>
     <header>
         <h1>Mi primera página con CSS</h1> <!--Cascading Styling Sheet-->
@@ -39,7 +44,7 @@
 
      <main>
         <!-- <section style="background-color: brown; color: white;"> -->
-        <section>
+        <section class="about-section">
             <h2>Titulo de la sección</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate distinctio reprehenderit explicabo dicta ipsum repudiandae nesciunt aut accusantium iure illum, facilis dolorem veniam officiis mollitia ullam obcaecati nobis iusto maiores!
@@ -64,68 +69,56 @@
             </p>
         </section>
 
-        <section>
-            <h2>🦙 Vicuña — Energía de Resistencia</h2>
-            <img src="https://www.caminosalkantay.com/blog/wp-content/uploads/2024/06/Vicuna-montana-Ausangate.jpg" alt="en los Andes">
-            <p>Originaria de los Andes, la vicuña representa fortaleza, servicio y conexión con la tierra. Su presencia tranquila y su capacidad de adaptación la convierten en símbolo de resiliencia y equilibrio. En culturas andinas, se asocia con la sabiduría ancestral y la protección espiritual.</p>
+        <section id="animales">
+            <article class="card">
+                <h2>🦙 Vicuña — Energía de Resistencia</h2>
+                <img class="card-img" src="https://www.caminosalkantay.com/blog/wp-content/uploads/2024/06/Vicuna-montana-Ausangate.jpg" alt="en los Andes">
+                <p>Originaria de los Andes, la vicuña representa fortaleza, servicio y conexión con la tierra. Su presencia tranquila y su capacidad de adaptación la convierten en símbolo de resiliencia y equilibrio. En culturas andinas, se asocia con la sabiduría ancestral y la protección espiritual.</p>
+            </article>
+
+            <article class="card">
+                <h2>🐬 Tonina — Energía de Alegría</h2>
+                <img class="card-img" src="https://www.ecoticias.com/wp-content/uploads/2022/01/RXHD_1017641-300x214-1.jpg" alt="Tonina saltando en el mar">
+                <p>Las toninas, delfines del sur, irradian libertad y juego. Su danza en el agua y su curiosidad natural evocan alegría, conexión emocional y fluidez. En tradiciones costeras, se las considera guardianas del mar y mensajeras de armonía entre mundos.</p>
+            </article>
+            <article class="card">
+                <h2>🐭 Chinchilla — Energía de Protección</h2>
+                <img class="card-img" src="https://stkittsvet.co.uk/wp-content/uploads/2019/06/images-chincilla.jpg" alt="Chinchilla en su hábitat">
+                <p>Pequeña y delicada, la chinchilla simboliza sensibilidad y refugio. Su pelaje suave y su naturaleza nocturna la vinculan con lo sutil y lo intuitivo. En la cosmovisión andina, se asocia con el cuidado del entorno y la conexión con lo invisible.</p>
+            </article>
         </section>
 
-        <section>
-            <h2>🐬 Tonina — Energía de Alegría</h2>
-            <img src="https://www.ecoticias.com/wp-content/uploads/2022/01/RXHD_1017641-300x214-1.jpg" alt="Tonina saltando en el mar">
-            <p>Las toninas, delfines del sur, irradian libertad y juego. Su danza en el agua y su curiosidad natural evocan alegría, conexión emocional y fluidez. En tradiciones costeras, se las considera guardianas del mar y mensajeras de armonía entre mundos.</p>
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <p>Completa el siguiente formulario y te responderemos pronto:</p>     
+            <form>
+                
+                <!-- Correo electronico -->
+                <label for="email">Correo electronico:</label><br>
+                <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required><br><br>
+                
+                <!-- Asunto -->
+                <label for="asunto">Asunto:</label><br>
+                <input type="text" id="asunto" name="asunto" placeholder="Escribe el asunto" required><br><br>
+                
+                 <!-- Comentario -->
+                <label for="comentario">Comentario:</label><br>
+                <textarea id="comentario" name="comentario" rows="5" placeholder="Escribe tu mensaje..." required></textarea><br><br>
+                <button class="contact-btn">enviar</button>                
+            </form>            
         </section>
 
-        <section>
-            <h2>🐭 Chinchilla — Energía de Protección</h2>
-            <img src="https://stkittsvet.co.uk/wp-content/uploads/2019/06/images-chincilla.jpg" alt="Chinchilla en su hábitat">
-            <p>Pequeña y delicada, la chinchilla simboliza sensibilidad y refugio. Su pelaje suave y su naturaleza nocturna la vinculan con lo sutil y lo intuitivo. En la cosmovisión andina, se asocia con el cuidado del entorno y la conexión con lo invisible.</p>
-        </section>
-        <!-- Antonia: Crear una sección con 3 articulos sobre Animales -->
 
+        <section id="articulos">
+            <article>
+                <h2>autitos</h2>
+                <p>
+                    El automóvil fue creado a través de varias etapas. Se inició con inventos de vehículos a 
+                    vapor como el de Nicolas-Joseph Cugnot en 1770
+                </p>
+                <a href="#">mas informacion..></a>
+            </article>
 
-        <!-- 
-        Francisco: Crea una Sectión de contactanos con un formulario que debe tener una input para el mail, asunto
-                    Comentario y un boton de enviar 
-        -->
-                    <section>
-                       
-                        <h2>Contáctanos</h2>
-                        
-                        <p>Completa el siguiente formulario y te responderemos pronto:</p>
-                        
-                        <form>
-                            
-                            <!-- Correo electronico -->
-                            <label for="email">Correo electronico:</label><br>
-                            <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required><br><br>
-                            
-                            <!-- Asunto -->
-                            <label for="asunto">Asunto:</label><br>
-                            <input type="text" id="asunto" name="asunto" placeholder="Escribe el asunto" required><br><br>
-                            
-                             <!-- Comentario -->
-                            <label for="comentario">Comentario:</label><br>
-                            <textarea id="comentario" name="comentario" rows="5" placeholder="Escribe tu mensaje..." required></textarea><br><br>
-
-                            <button>enviar</button>
-                            
-                        </form>
-                        
-                    </section>
-
-        <!-- 
-        Rafael: Crear una sección dos articulos y dentro de cada articulo tener un titulo, un bloque de texto y un boton de más info
-        -->
-    <section>
-        <article>
-            <h2>autitos</h2>
-            <p>
-                El automóvil fue creado a través de varias etapas. Se inició con inventos de vehículos a 
-                vapor como el de Nicolas-Joseph Cugnot en 1770
-            </p>
-            <a href="#">mas informacion..></a>
-        </article>
             <article>
                 <h2>trenes</h2>
                 <p>
@@ -134,17 +127,15 @@
                     siendo Richard Trevithick quien construyó la primera locomotora a vapor en 1802
                 </p>
                 <a href="#"> mas info...</a>
-                </article>
-    </section>
-
-        <!-- Salem: Crear un Footer con enlaces de contacto, reserva de derechos y dirección de la empresa (dirección ficticia) -->
-        <footer>
-        <div>
-            <p>Contacto: contacto@bootcampudd.com | +56 9 1234 5678</p>
-            <p>Dirección: Av.Grecia 2001, Ñuñoa, Chile</p>
-            <p>2025 Clase 10: Estilos con CSS - Todos los derechos reservados</p>
-        </div>        
-        </footer>
-</main>
+            </article>
+        </section>
+    </main>
+    <footer>
+    <div>
+        <p>Contacto: contacto@bootcampudd.com | +56 9 1234 5678</p>
+        <p>Dirección: Av.Grecia 2001, Ñuñoa, Chile</p>
+        <p>2025 Clase 10: Estilos con CSS - Todos los derechos reservados</p>
+    </div>        
+    </footer>
 </body>
 </html>
