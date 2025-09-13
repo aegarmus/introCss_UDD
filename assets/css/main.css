@@ -48,6 +48,10 @@ body {
 }
 
 nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     padding: 2rem;
 
     position: fixed;
@@ -68,6 +72,9 @@ nav img {
  }
 
 .navbar-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
     list-style: none;
 }
@@ -87,6 +94,15 @@ nav img {
     /*Maneja el eje X de flex*/
     align-items: center;
     /*Maneja el eje Y de flex */
+}
+
+.btn-hamburger {
+    background-color: transparent;
+    color: var(--neutral-white);
+    font-size: 1.5rem;
+
+    /* visibility: hidden; Oculta el elemento pero NO lo saca del flujo */
+    display: none; /* Oculta el elemento pero lo saca del Flujo */
 }
 
 .navbar-item a {
@@ -156,6 +172,38 @@ main {
     width: 80%;
     margin: 0 auto
 }
+
+#animales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    margin: 5rem 0
+}
+
+.card {
+    width: 18rem;
+    height: 45rem;
+
+    box-shadow: 0 0 15px var(--neutral-white);
+    border-radius: 15px;
+
+    padding: 2rem;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+
+    margin: 1rem 0;
+}
+
+.card-img {
+    width: 15rem;
+    height: 17rem;
+
+    border-radius: 50%;
+}
 /*
 Unidades Absolutas
 px
@@ -176,3 +224,18 @@ ch
 x
 
 /*
+
+
+
+/* Media Queries -> Herramienta para ajustar xlas consultas en base a las dimensiones de la pantalla */
+
+@media(max-width: 780px) {
+    nav {
+        flex-direction: column
+    }
+
+    .navbar-items {
+        flex-direction: column;
+        margin: 1rem 0
+    }
+}
