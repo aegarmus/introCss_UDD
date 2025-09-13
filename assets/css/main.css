@@ -174,22 +174,32 @@ main {
 }
 
 #animales {
+    max-width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
 
     margin: 5rem 0
 }
 
 .card {
-    width: 18rem;
-    height: 45rem;
+    width: 40rem;
+    height: 25rem;
 
     box-shadow: 0 0 15px var(--neutral-white);
     border-radius: 15px;
 
     padding: 2rem;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
 .card h2 {
@@ -237,5 +247,21 @@ x
     .navbar-items {
         flex-direction: column;
         margin: 1rem 0
+    }
+}
+
+@media(max-width: 660px) {
+    .card {
+        width: 20rem;
+        height: 45rem;
+    }
+
+    .card-body {
+        flex-direction: column;
+    }
+
+    .card-img {
+        width: 80%;
+        height: auto;
     }
 }
